@@ -82,10 +82,10 @@ export async function extract(
   const swapEvents = reduceEventData<SwapEvent>(events, "SwapEvent");
   const feeEvent = reduceEventData<FeeEvent>(events, "FeeEvent")[0];
 
-  if (swapEvents.length === 0) {
-    // Not a swap event, for example: https://solscan.io/tx/5ZSozCHmAFmANaqyjRj614zxQY8HDXKyfAs2aAVjZaadS4DbDwVq8cTbxmM5m5VzDcfhysTSqZgKGV1j2A2Hqz1V
-    return;
-  }
+  // if (swapEvents.length === 0) {
+  //   // Not a swap event, for example: https://solscan.io/tx/5ZSozCHmAFmANaqyjRj614zxQY8HDXKyfAs2aAVjZaadS4DbDwVq8cTbxmM5m5VzDcfhysTSqZgKGV1j2A2Hqz1V
+  //   return;
+  // }
 
   const accountsToBeFetched = new Array<PublicKey>();
   swapEvents.forEach((swapEvent) => {
